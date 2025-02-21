@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="〇〇へのお問い合わせページです。">
+    <meta name="keywords" content="お問い合わせ, 〇〇, 連絡先">
+    <title>お問い合わせ - ポートフォリオサイト</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">ポートフォリオ</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="about.html">自己紹介</a></li>
+                    <li><a href="projects.html">プロジェクト</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="about.html">自己紹介</a></li>
+            <li><a href="projects.html">プロジェクト</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+    </header>
+    <main>
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>お問い合わせはこちらのフォームからどうぞ。</p>
+            <form action="#" method="post">
+                <label for="name">お名前:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">メールアドレス:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">メッセージ:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <input type="submit" value="送信">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 〇〇のポートフォリオサイト</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+</html> 
