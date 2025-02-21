@@ -45,6 +45,10 @@
                 <a href="about.html" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #0070c9; color: white; text-decoration: none; border-radius: 5px;">もっと知る</a>
             </div>
         </section>
+        <div class="fade-in" style="opacity: 0; transition: opacity 1s ease;">
+            <h2>フェードインするコンテンツ</h2>
+            <p>このコンテンツはスクロール時にフェードインします。</p>
+        </div>
     </main>
     <footer id="footer"></footer>
     <script>
@@ -59,6 +63,27 @@
             });
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems);
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            });
+
+            fadeInElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
         });
     </script>
 </body>
